@@ -19,8 +19,8 @@ $sales = $pdo->prepare("
     LEFT JOIN customers c ON c.id = s.customer_id
     WHERE  DATE(s.sale_date) = ?
     ORDER  BY s.sale_date ASC
-");
 $sales->execute([$date]);
+");
 $sales = $sales->fetchAll();
 
 // ── Aggregate totals ──────────────────────────────────────

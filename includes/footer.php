@@ -2,7 +2,7 @@
 
 <footer class="footer">
     <div class="container text-center">
-        <strong><?= APP_NAME ?></strong> &copy; <?= date('Y') ?>  
+        <strong><?= APP_NAME ?></strong> &copy; <?= date('Y') ?>
         <br>
         <small>Hardware Store POS System</small>
         <br><br>
