@@ -19,10 +19,9 @@ $pageTitle = page_title('Add Supplier');
 include __DIR__ . '/../../includes/header.php';
 include __DIR__ . '/../../includes/navbar.php';
 ?>
-<h3 class="supplier-form-title">Add Supplier</h3>
-<div class="card supplier-form-card">
-    <div class="card-body">
-        <form method="post">
+<h3>Add Supplier</h3>
+<div class="card"><div class="card-body">
+<form method="post">
 
         <div class="mb-3">
             <label class="form-label">Supplier Name</label>
@@ -44,11 +43,8 @@ include __DIR__ . '/../../includes/navbar.php';
             <label class="form-label">Outstanding Balance</label>
             <input type="text" name="outstanding_balance" class="form-control" value="<?= e(old('outstanding_balance')) ?>" required>
         </div>
-        <div class="supplier-form-actions">
-                    <button class="btn btn-primary">Save</button>
-                    <a href="index.php" class="btn btn-secondary">Back</a>
-                </div>
-            </form>
-        </div>
-    </div>
+    <button class="btn btn-primary">Save</button>
+    <a href="index.php" class="btn btn-secondary">Back</a>
+</form>
+</div></div>
 <?php include __DIR__ . '/../../includes/footer.php'; ?>

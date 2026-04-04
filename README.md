@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # Hardware Store POS - PHP + MySQL
 
 ## Setup
@@ -12,6 +11,3 @@
 - Delete is handled as `is_active = 0`
 - This is a starter structure based on your requested folder tree
 - You can extend each module with validations, joins, and proper AJAX flows
-=======
-# POS-System
->>>>>>> e03e9a16e63c7bc8b04070c88428769ed7cd458c
