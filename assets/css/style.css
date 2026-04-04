@@ -1,1 +1,95 @@
-/* style.css — styles have been moved inline to includes/header.php */
+/* Import fonts */
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Outfit:wght@100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Purple+Purse&family=Rethink+Sans:ital,wght@0,400..800;1,400..800&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
+
+/* =========================
+   General Styles
+========================= */
+body {
+    font-family: 'Lato', sans-serif;
+    background-color: #f4f6f9;
+    color: #343a40;
+}
+
+/* Card Stats */
+.card-stat {
+    border-radius: 12px;
+    background-color: #fff;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    transition: transform 0.3s, box-shadow 0.3s;
+    padding: 20px;
+    text-align: center;
+}
+
+.card-stat:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+}
+
+.card-stat h6 {
+    font-size: 0.9rem;
+    color: #6c757d;
+    margin-bottom: 10px;
+}
+
+.card-stat h2 {
+    font-size: 2rem;
+    color: #007bff;
+    margin: 0;
+}
+
+/* Quick Links */
+.card-body h4 {
+    margin-bottom: 15px;
+    font-weight: 700;
+    color: #343a40;
+}
+
+.quick-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.quick-card {
+    flex: 1 1 200px;
+    background-color: #fff;
+    border-radius: 12px;
+    padding: 20px;
+    text-align: center;
+    text-decoration: none;
+    color: #343a40;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.quick-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+}
+
+.quick-card i {
+    font-size: 2rem;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.quick-card h6 {
+    font-size: 1.1rem;
+    color: #007bff;
+    margin-bottom: 5px;
+}
+
+.quick-card p {
+    font-size: 0.85rem;
+    color: #6c757d;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .row.g-3 {
+        row-gap: 1rem;
+    }
+    .quick-links {
+        flex-direction: column;
+    }
+}
