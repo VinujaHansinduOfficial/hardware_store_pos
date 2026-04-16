@@ -293,7 +293,7 @@ $item_disc_total = array_sum(array_column($items, 'item_discount'));
         </div>
         <div class="th-row">
             <span class="th-key">ගනුදෙනුකරු</span>
-            <span class="th-val"><?= $sale['customer_name'] ? e($sale['customer_name']) : 'Walk-in' ?></span>
+            <span class="th-val"><?= $sale['customer_name'] ? e($sale['customer_name']) : 'ඇවිත්' ?></span>
         </div>
         <?php if ($sale['customer_phone']): ?>
         <div class="th-row">
@@ -336,7 +336,7 @@ $item_disc_total = array_sum(array_column($items, 'item_discount'));
                     <div class="item-sku"><?= e($item['sku']) ?></div>
                     <?php endif; ?>
                     <?php if ($item['item_discount'] > 0): ?>
-                    <div class="item-sku">Disc: -<?= number_format($item['item_discount'], 2) ?></div>
+                    <div class="item-sku">වට්ටම: -<?= number_format($item['item_discount'], 2) ?></div>
                     <?php endif; ?>
                 </td>
                 <td><?= number_format($item['qty'], 0) ?></td>
@@ -370,7 +370,7 @@ $item_disc_total = array_sum(array_column($items, 'item_discount'));
     </div>
 
     <div class="th-grand">
-        <span>TOTAL</span>
+        <span>එකතුව</span>
         <span><?= CURRENCY ?> <?= number_format($sale['net_amount'], 2) ?></span>
     </div>
 
