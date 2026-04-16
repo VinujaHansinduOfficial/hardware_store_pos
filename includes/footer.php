@@ -14,17 +14,14 @@
 <style>
 /* ===== Footer Professional Style ===== */
 html, body {
-    height: 100%;
+    min-height: 100%;
     margin: 0;
 }
 
 body {
     display: flex;
     flex-direction: column;
-}
-
-.main-content {
-    flex: 1;
+    min-height: 100vh;
 }
 
 .footer {
@@ -35,6 +32,7 @@ body {
     width: 100%;
     text-align: center;
     flex-shrink: 0;
+    margin-top: auto;
     padding: 20px 0;
 }
 

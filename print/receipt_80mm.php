@@ -37,11 +37,13 @@ $item_disc_total = array_sum(array_column($items, 'item_discount'));
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Receipt #<?= str_pad($sale_id, 5, '0', STR_PAD_LEFT) ?> — <?= APP_NAME ?></title>
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Sinhala:wght@400;700&display=swap');
+
         /* ── 80mm thermal receipt ── */
         * { margin:0; padding:0; box-sizing:border-box; }
 
         body {
-            font-family: 'Courier New', Courier, monospace;
+            font-family: 'Iskoola Pota', 'Noto Sans Sinhala', 'Segoe UI Historic', sans-serif;
             font-size: 12px;
             background: #f5f5f5;
             display: flex;
@@ -272,35 +274,35 @@ $item_disc_total = array_sum(array_column($items, 'item_discount'));
     <!-- Store header -->
     <div class="th-header">
         <div class="th-store-name"><?= APP_NAME ?></div>
-        <div class="th-store-sub">Hardware Store · Point of Sale</div>
+        <div class="th-store-sub">උපාංග වෙළඳසල් · අලෙවිය</div>
     </div>
 
     <!-- Receipt number -->
     <div class="th-receipt-num"><?= str_pad($sale_id, 5, '0', STR_PAD_LEFT) ?></div>
-    <div class="th-receipt-label">Receipt Number</div>
+    <div class="th-receipt-label">පත්‍රිකා අංකය</div>
 
     <!-- Sale info -->
     <div class="th-info">
         <div class="th-row">
-            <span class="th-key">Date</span>
+            <span class="th-key">දිනය</span>
             <span class="th-val"><?= date('d/m/Y', strtotime($sale['sale_date'])) ?></span>
         </div>
         <div class="th-row">
-            <span class="th-key">Time</span>
+            <span class="th-key">වේලාව</span>
             <span class="th-val"><?= date('H:i A', strtotime($sale['sale_date'])) ?></span>
         </div>
         <div class="th-row">
-            <span class="th-key">Customer</span>
+            <span class="th-key">ගනුදෙනුකරු</span>
             <span class="th-val"><?= $sale['customer_name'] ? e($sale['customer_name']) : 'Walk-in' ?></span>
         </div>
         <?php if ($sale['customer_phone']): ?>
         <div class="th-row">
-            <span class="th-key">Phone</span>
+            <span class="th-key">දුරකථන</span>
             <span class="th-val"><?= e($sale['customer_phone']) ?></span>
         </div>
         <?php endif; ?>
         <div class="th-row">
-            <span class="th-key">Payment</span>
+            <span class="th-key">ගෙවීම</span>
             <span class="th-val"><?= e($sale['payment_method']) ?></span>
         </div>
     </div>
@@ -310,19 +312,19 @@ $item_disc_total = array_sum(array_column($items, 'item_discount'));
     <!-- Outstanding notice -->
     <?php if ($sale['status'] === 'outstanding'): ?>
     <div class="th-outstanding">
-        *** OUTSTANDING — PAYMENT PENDING ***
+        *** ඉතිරිව තිබේ — ගෙවීම් බලාපොරොත්තුයි ***
     </div>
     <?php endif; ?>
 
     <!-- Items -->
-    <div class="th-section">Items</div>
+    <div class="th-section">අයිතම</div>
     <table class="th-items">
         <thead>
             <tr>
-                <th style="width:45%;">Item</th>
-                <th style="width:12%;text-align:right;">Qty</th>
-                <th style="width:20%;text-align:right;">Price</th>
-                <th style="width:23%;text-align:right;">Total</th>
+                <th style="width:45%;">අයිතමය</th>
+                <th style="width:12%;text-align:right;">ප්‍රමාණය</th>
+                <th style="width:20%;text-align:right;">මිල</th>
+                <th style="width:23%;text-align:right;">එකතුව</th>
             </tr>
         </thead>
         <tbody>
@@ -350,18 +352,18 @@ $item_disc_total = array_sum(array_column($items, 'item_discount'));
     <!-- Totals -->
     <div class="th-totals">
         <div class="th-total-row">
-            <span class="ttl">Subtotal</span>
+            <span class="ttl">උප මුදල</span>
             <span class="ttv"><?= CURRENCY ?> <?= number_format($sale['total_amount'], 2) ?></span>
         </div>
         <?php if ($item_disc_total > 0): ?>
         <div class="th-total-row">
-            <span class="ttl">Item Discounts</span>
+            <span class="ttl">අයිතම වට්ටම්</span>
             <span class="ttv">- <?= number_format($item_disc_total, 2) ?></span>
         </div>
         <?php endif; ?>
         <?php if ($sale['bill_discount'] > 0): ?>
         <div class="th-total-row">
-            <span class="ttl">Bill Discount</span>
+            <span class="ttl">බිල් වට්ටම</span>
             <span class="ttv">- <?= number_format($sale['bill_discount'], 2) ?></span>
         </div>
         <?php endif; ?>
@@ -374,7 +376,7 @@ $item_disc_total = array_sum(array_column($items, 'item_discount'));
 
     <!-- Footer -->
     <div class="th-footer">
-        *** Thank you for your purchase! ***<br>
+        *** ඔබේ මිලදී ගැනීම සඳහා ස්තුතියි! ***<br>
         <?= APP_NAME ?><br>
         <?= date('d M Y H:i', strtotime($sale['sale_date'])) ?>
     </div>
